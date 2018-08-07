@@ -1,0 +1,7 @@
+ext.env="local"
+
+
+ext.db_url="jdbc:mysql://localhost:3306/demo?autoReconnect=true&createDatabaseIfNotExist=true"
+ext.db_user="demo"
+ext.db_password="123456"
+

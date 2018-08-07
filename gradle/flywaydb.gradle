@@ -1,0 +1,9 @@
+
+flyway {
+    url = "$db_url"
+    user = "$db_user"
+    password = "$db_password"
+    driver = "$db_driver"
+
+
+}

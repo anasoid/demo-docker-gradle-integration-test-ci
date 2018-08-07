@@ -1,0 +1,35 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+
+  dependencies {
+    classpath 'org.gretty:gretty:2.2.0'
+  }
+}
+
+repositories {
+  jcenter()
+}
+
+if (!project.plugins.findPlugin(org.akhikhl.gretty.GrettyPlugin))
+  project.apply(plugin: org.akhikhl.gretty.GrettyPlugin)
+
+
+
+gretty {
+    jacocoEnabled false
+    servletContainer = 'tomcat8'
+    debugSuspend = false
+    httpPort = 8080
+    loggingLevel = "${gretty_loggingLevel}"
+    scanInterval = 999999
+    logDir = "${gretty_logDir}"
+    contextPath = "/demo"
+}
+
+farm {
+    webapp project
+
+
+}

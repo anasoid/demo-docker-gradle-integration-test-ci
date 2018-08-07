@@ -1,0 +1,13 @@
+ext.env="test"
+
+ext.dbhost="$project.dc_backend_address"
+ext.db_url="jdbc:mysql://$project.dbhost:13306/demo?autoReconnect=true&createDatabaseIfNotExist=true"
+ext.db_user="root"
+ext.db_password="root"
+ext.integrationTest="true"
+
+
+ext.junit_mysql_db_url="$project.db_url"
+ext.junit_mysql_db_user="$project.db_user"
+ext.junit_mysql_db_password="$project.db_password"
+

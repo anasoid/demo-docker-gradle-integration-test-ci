@@ -1,0 +1,4 @@
+ext.dc_backend_address = localhost
+ext.dc_docker_host = "localhost"
+dc_docker_cert_path= "docker is disabled"
+dc_docker_tls_verify= "docker is disabled"

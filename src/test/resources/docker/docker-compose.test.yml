@@ -1,0 +1,10 @@
+version: '3.2'
+
+services:
+  demodb:
+    image: mariadb:10.2
+    container_name: mysqldemo
+    ports:
+       - "13306:3306"
+    environment:
+        MYSQL_ROOT_PASSWORD: root
