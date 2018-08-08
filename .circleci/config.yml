@@ -58,9 +58,33 @@ jobs:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
-      # run tests!
-      - run: ./gradlew composeup
-      - run: ./gradlew test
+      # run docker compose!
+      - run:
+          name: run enviornment test with docker compose
+          command: |
+            ./gradlew composeup
+
+    # run flywaydb to initialize data!
+      - run:
+          name: run flywaydb to initialize data
+          command: |
+            ./gradlew flywaymigrate
+
+    # run tomcat using gretty in backgroud!
+      - run:
+          name: run tomcat using gretty in backgroud
+          command: |
+            ./gradlew farmRunWar
+          background: true
+
+     # wait server to start and run test!
+      - run:
+          name:  run test
+          command: |
+            sleep 5000
+            ./gradlew test
+
+            
        # save tests!
       - run:
           name: Save test results 
