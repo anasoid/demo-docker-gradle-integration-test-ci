@@ -39,6 +39,7 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
         
       # run tests!
+      - run: gradle composeup
       - run: gradle test
        # save tests!
       - run:
