@@ -83,11 +83,13 @@ jobs:
           command: |
             sleep 20
             ./gradlew test
+          no_output_timeout: 1m
     # check process
       - run:
           name:  check process
           command: |
             ps -ef
+          when: always
 
     # wait server to start and run test!
       - run:
@@ -95,6 +97,7 @@ jobs:
           command: |
             ./gradlew farmStop
             ./gradlew composeDown
+          when: always
 
        # save tests!
       - run:
