@@ -1,0 +1,20 @@
+if ("$System.env.BACKEND_ADDRESS" !="null")
+    ext.dc_backend_address = "$System.env.BACKEND_ADDRESS"
+else
+    ext.dc_backend_address = "127.0.0.1"
+
+if ("$System.env.DOCKER_HOST" !="null")
+    ext.dc_docker_host = "$System.env.DOCKER_HOST"
+else
+    ext.dc_docker_host = ""
+
+if ("$System.env.DOCKER_CERT_PATH" !="null")
+    ext.dc_docker_cert_path = "$System.env.DOCKER_CERT_PATH"
+else
+    ext.dc_docker_cert_path = ""
+
+if ("$System.env.DOCKER_TLS_VERIFY" !="null")
+    ext.dc_docker_tls_verify = "$System.env.DOCKER_TLS_VERIFY"
+else
+    ext.dc_docker_tls_verify = ""
+

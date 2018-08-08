@@ -21,7 +21,7 @@ jobs:
 
     environment:
       # Customize the JVM maximum heap limit
-      JVM_OPTS: -Xmx3200m
+
       TERM: dumb
     
     steps:
@@ -40,8 +40,12 @@ jobs:
             curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
             chmod +x ~/docker-compose
             sudo mv ~/docker-compose /usr/local/bin/docker-compose
-            
-      
+
+      - run:
+           name: check docker images and container
+           command: |
+             docker ps -a
+             docker images
       
       - run: ./gradlew dependencies
 
