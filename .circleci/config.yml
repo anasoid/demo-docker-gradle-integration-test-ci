@@ -83,6 +83,11 @@ jobs:
           command: |
             sleep 20
             ./gradlew test
+    # check process
+      - run:
+          name:  check process
+          command: |
+            ps -ef
 
     # wait server to start and run test!
       - run:
