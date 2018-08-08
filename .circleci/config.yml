@@ -81,7 +81,7 @@ jobs:
       - run:
           name:  run test
           command: |
-            sleep 5000
+            sleep 5
             ./gradlew test
 
     # wait server to start and run test!
