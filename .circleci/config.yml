@@ -21,8 +21,8 @@ jobs:
 
     environment:
       # Customize the JVM maximum heap limit
-
-      TERM: dumb
+      buildProfile: test
+      dockerProfile : circleci
     
     steps:
       - checkout
@@ -42,18 +42,22 @@ jobs:
             sudo mv ~/docker-compose /usr/local/bin/docker-compose
 
       - run:
-           name: check docker images and container
+           name: check docker  container
            command: |
              docker ps -a
+
+     - run:
+           name: check docker images
+           command: |
              docker images
-      
+
       - run: ./gradlew dependencies
 
       - save_cache:
           paths:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
-        
+
       # run tests!
       - run: ./gradlew composeup
       - run: ./gradlew test
