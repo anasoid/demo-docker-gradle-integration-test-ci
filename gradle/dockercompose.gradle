@@ -1,9 +1,9 @@
 dockerCompose {
     useComposeFiles = ["${project.projectDir}/src/test/resources/docker/docker-compose.test.yml"] // like 'docker-compose -f <file>'; default is empty
-    environment.put   "BACKEND_ADDRESS", "$project.dc_backend_address" // Pass environment variable to 'docker-compose' for substitution in compose file
-    environment.put  "DOCKER_HOST","$project.dc_docker_host"
-    environment.put  "DOCKER_CERT_PATH", "$project.dc_docker_cert_path"
-    environment.put  "DOCKER_TLS_VERIFY", "$project.dc_docker_tls_verify"
+   // environment.put   "BACKEND_ADDRESS", "$project.dc_backend_address" // Pass environment variable to 'docker-compose' for substitution in compose file
+    //environment.put  "DOCKER_HOST","$project.dc_docker_host"
+   // environment.put  "DOCKER_CERT_PATH", "$project.dc_docker_cert_path"
+   // environment.put  "DOCKER_TLS_VERIFY", "$project.dc_docker_tls_verify"
     // startedServices = ['mysql'] // list of services to execute when calling 'docker-compose up' or 'docker-compose pull' (when not specified, all services are executed)
     // scale = [${serviceName1}: 5, ${serviceName2}: 2] // Pass docker compose --scale option like 'docker-compose up --scale serviceName1=5 --scale serviceName2=2'
     // forceRecreate = false // pass '--force-recreate' when calling 'docker-compose up' when set to 'true`
