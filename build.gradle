@@ -95,7 +95,8 @@ allprojects {
 
     apply plugin: 'java'
     apply plugin: 'maven'
-	
+    apply plugin: 'checkstyle'
+    apply plugin: 'pmd'
 	apply plugin: "jacoco"
 	
 	
@@ -119,21 +120,14 @@ allprojects {
 	//lib version
 
 
-}
 
-
-
-subprojects {
-    
-   apply plugin: 'checkstyle'
-   apply plugin: 'pmd'
    
    
      checkstyle {
 
         configFile = rootProject.file('config/checkstyle/google_checks.xml')
         toolVersion "8.7"
-        ignoreFailures =false
+        ignoreFailures =true
         maxErrors = 0
         maxWarnings = 0
 

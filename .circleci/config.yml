@@ -53,10 +53,7 @@ jobs:
 
       - run: ./gradlew dependencies
 
-      - save_cache:
-          paths:
-            - ~/.gradle
-          key: v1-dependencies-{{ checksum "build.gradle" }}
+
 
       # run docker compose!
       - run:
@@ -82,8 +79,14 @@ jobs:
           name:  run test
           command: |
             sleep 20
-            ./gradlew test
+            ./gradlew check
           no_output_timeout: 1m
+
+      - save_cache:
+          paths:
+          - ~/.gradle
+          key: v1-dependencies-{{ checksum "build.gradle" }}
+          when: always
     # check process
       - run:
           name:  check process
@@ -103,11 +106,10 @@ jobs:
       - run:
           name: Save test results 
           command: |
-            mkdir -p ~/junit/
-            find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} ~/junit/ \;
-            cp -r ./build/reports/tests/test ~/junit/report;
+            mkdir -p ~/reports/
+           cp -r ./build/reports ~/reports;
           when: always
       - store_test_results:
-          path: ~/junit
+          path: ~/reports
       - store_artifacts:
-          path: ~/junit   
+          path: ~/reports
