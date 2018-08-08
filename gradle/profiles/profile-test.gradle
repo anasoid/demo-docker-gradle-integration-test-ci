@@ -11,3 +11,5 @@ ext.junit_mysql_db_url="$project.db_url"
 ext.junit_mysql_db_user="$project.db_user"
 ext.junit_mysql_db_password="$project.db_password"
 
+ext.gretty_loggingLevel=DEBUG
+
