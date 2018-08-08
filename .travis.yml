@@ -3,8 +3,16 @@ sudo: required
 dist: trusty
 install: true
 
+services:
+  - docker
+  
 jdk:
 - oraclejdk8
+
+before_script:
+- printenv 
+
+
 script:
 - ./gradlew check
 
