@@ -12,7 +12,7 @@ import org.junit.experimental.categories.Category;
 @Category(IntegrationTest.class)
 public class HelloServletTest {
 
-  @Test
+  @Test(timeout = 10000)
   public void getTest() {
     Response response = given()
         .when().
