@@ -1,4 +1,5 @@
-ext.env="local"
+if (!hasProperty('env'))
+    ext.env = 'local'
 
 
 ext.db_url="jdbc:mysql://localhost:3306/demo?autoReconnect=true&createDatabaseIfNotExist=true"

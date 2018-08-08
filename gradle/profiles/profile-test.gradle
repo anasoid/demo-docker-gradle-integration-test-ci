@@ -1,4 +1,5 @@
-ext.env="test"
+if (!hasProperty('env'))
+    ext.env = 'test'
 
 ext.dbhost="$project.dc_backend_address"
 ext.db_url="jdbc:mysql://$project.dbhost:13306/demo?autoReconnect=true&createDatabaseIfNotExist=true"

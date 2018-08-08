@@ -1,7 +1,9 @@
+ext.env = 'circleci'
+
 if ("$System.env.BACKEND_ADDRESS" !="null")
     ext.dc_backend_address = "$System.env.BACKEND_ADDRESS"
 else
-    ext.dc_backend_address = "192.0.0.1"
+    ext.dc_backend_address = "127.0.0.1"
 
 if ("$System.env.DOCKER_HOST" !="null")
     ext.dc_docker_host = "$System.env.DOCKER_HOST"
