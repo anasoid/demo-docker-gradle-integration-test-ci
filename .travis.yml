@@ -1,0 +1,21 @@
+language: java
+sudo: required
+dist: trusty
+install: true
+
+jdk:
+- oraclejdk8
+script:
+- ./gradlew check
+
+
+
+
+
+cache:
+  directories:
+  - "$HOME/.m2/repository"
+  - "$HOME/.sonar/cache"
+  - "$HOME/.gradle"
+  - ".gradle"
+
