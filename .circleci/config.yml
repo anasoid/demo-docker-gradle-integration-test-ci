@@ -107,7 +107,7 @@ jobs:
           name: Save test results 
           command: |
             mkdir -p ~/reports/
-           cp -r ./build/reports ~/reports;
+            cp -r ./build/reports ~/reports;
           when: always
       - store_test_results:
           path: ~/reports
