@@ -97,6 +97,12 @@ jobs:
             ps -ef
           when: always
 
+    # check process
+      - run:
+          name:  sonar check
+          command: |
+            ./gradlew sonarqube -Dsonar.organization=$sonar_organization  -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$sonar_login
+
       - save_cache:
           paths:
           - ~/.gradle
