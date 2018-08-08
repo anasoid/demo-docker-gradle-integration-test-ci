@@ -10,7 +10,7 @@ jdk:
 - oraclejdk8
 
 before_script:
-- printenv 
+- buildProfile=test 
 
 
 script:
