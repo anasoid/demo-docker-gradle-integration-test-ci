@@ -6,7 +6,7 @@ ext.db_password=""
 ext.db_driver="com.mysql.jdbc.Driver"
 ext['flyway.schemas']='demo'
 ext['flyway.locations']="filesystem:${rootProject.projectDir}/flywaydb"
-ext.rest_url="http://localhost:8081/demo"
+ext.rest_url="http://localhost:8080/demo"
 
 ext.gretty_loggingLevel="WARN"
 ext.gretty_logDir="${rootProject.projectDir}/build"
