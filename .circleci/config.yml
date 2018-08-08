@@ -84,7 +84,13 @@ jobs:
             sleep 5000
             ./gradlew test
 
-            
+    # wait server to start and run test!
+      - run:
+          name:  Stop environement
+          command: |
+            ./gradlew farmStop
+            ./gradlew composeDown
+
        # save tests!
       - run:
           name: Save test results 
