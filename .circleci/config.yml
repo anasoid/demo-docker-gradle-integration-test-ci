@@ -46,7 +46,7 @@ jobs:
            command: |
              docker ps -a
 
-     - run:
+      - run:
            name: check docker images
            command: |
              docker images
