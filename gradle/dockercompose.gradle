@@ -1,7 +1,7 @@
 dockerCompose {
     useComposeFiles = ["${project.projectDir}/src/test/resources/docker/docker-compose.test.yml"] // like 'docker-compose -f <file>'; default is empty
-    environment.put   "BACKEND_ADDRESS", "127.0.0.1" // Pass environment variable to 'docker-compose' for substitution in compose file
-    environment.put  "DOCKER_HOST","127.0.0.1"
+     environment.put   "BACKEND_ADDRESS", "127.0.0.1" // Pass environment variable to 'docker-compose' for substitution in compose file
+    // environment.put  "DOCKER_HOST","127.0.0.1"
    // environment.put  "DOCKER_CERT_PATH", "$project.dc_docker_cert_path"
    // environment.put  "DOCKER_TLS_VERIFY", "$project.dc_docker_tls_verify"
     // startedServices = ['mysql'] // list of services to execute when calling 'docker-compose up' or 'docker-compose pull' (when not specified, all services are executed)
