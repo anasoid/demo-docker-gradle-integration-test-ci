@@ -74,7 +74,7 @@ jobs:
       - run:
           name: run tomcat using gretty in backgroud
           command: |
-            ./gradlew farmRunWar
+            ./gradlew farmStartWar
           background: true
 
      # wait server to start and run test!
