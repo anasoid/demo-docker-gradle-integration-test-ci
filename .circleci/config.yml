@@ -98,7 +98,7 @@ jobs:
       - run:
           name:  sonar check
           command: |
-                  ./gradlew sonarqube -Dsonar.organization=$sonar_organization  -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$sonar_login -Dsonar.branch.name=$CIRCLE_BRANCH -Dsonar.pullrequest.branch=$CIRCLE_BRANCH
+                  ./gradlew sonarqube -Dsonar.organization=$sonar_organization  -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$sonar_login -Dsonar.branch.name=$CIRCLE_BRANCH 
 
       - save_cache:
           paths:
