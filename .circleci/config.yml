@@ -50,26 +50,26 @@ jobs:
 
       # run docker compose!
       - run:
-          name: run enviornment test with docker compose
+          name: Start environment test with docker compose
           command: |
             ./gradlew composeup
 
     # run flywaydb to initialize data!
       - run:
-          name: run flywaydb to initialize data
+          name: Run flywaydb to initialize data
           command: |
             ./gradlew flywaymigrate
 
     # run tomcat using gretty in backgroud!
       - run:
-          name: run tomcat using gretty in backgroud
+          name: Start tomcat using gretty in backgroud
           command: |
             ./gradlew farmStartWar
           background: true
 
      # wait server to start and run test!
       - run:
-          name:  run test
+          name:  Run test
           command: |
             sleep 10
             ./gradlew check
@@ -85,7 +85,7 @@ jobs:
 
     # check process
       - run:
-          name:  check process
+          name:  Check process
           command: |
             ps -ef
           when: always
