@@ -38,6 +38,10 @@ jobs:
            name: check docker  container
            command: |
              docker ps -a
+      - run:
+          name: printenv
+          command: |
+            printenv
 
       - run:
            name: check docker images
